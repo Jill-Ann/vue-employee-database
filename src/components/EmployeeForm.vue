@@ -23,6 +23,10 @@
     methods: {
         handleSubmit() {
             this.$emit('add:employee', this.employee)
+
+        clearStatus() {
+            this.success = false
+            this.error = false
         },
     },
   }
