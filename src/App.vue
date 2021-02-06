@@ -1,12 +1,5 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EmployeeTable from '@/components/EmployeeTable.vue'
 
 export default {
   name: 'App',
@@ -36,6 +29,14 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div id="app" class="small-container">
+    <h1>Employees</h1>
+
+    <employee-table v-bind:employees="employees" />
+  </div>
+</template>
 
 <style>
   button {
