@@ -9,6 +9,14 @@
         },
       }
     },
+    computed: {
+        invalidName() {
+            return this.employee.name == ''
+        },
+        invalidEmail() {
+            return this.employee.email == ''
+        },
+    },
     methods: {
         handleSubmit() {
             this.$emit('add:employee', this.employee)
