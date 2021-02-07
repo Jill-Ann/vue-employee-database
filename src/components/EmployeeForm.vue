@@ -34,9 +34,10 @@
             this.$refs.first.focus()
 
             this.employee = {
-                name: '',
+              name: '',
                 email: '',
             }
+
             this.error = false
             this.success = true
             this.submitting = false
@@ -69,9 +70,7 @@
         v-model="employee.email"
         @focus="clearStatus"
       />
-      <p v-if="error && submitting" class="error-message">
-        ❗Please fill out all required fields
-      </p>
+      <p v-if="submitting && error" class="error-message">❗Please fill out all required fields</p>
       <p v-if="success" class="success-message">✅ Employee successfully added</p>
       <button>Add Employee</button>
     </form>
