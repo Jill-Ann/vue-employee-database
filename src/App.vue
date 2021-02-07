@@ -47,6 +47,11 @@ export default {
       )
     },
 
+    editEmployee(id, updatedEmployee) {
+      this.employees = this.employees.map(employee => {
+        return employee.id == id ? updatedEmployee : employee
+      })
+    },
   }
 }
 </script>
