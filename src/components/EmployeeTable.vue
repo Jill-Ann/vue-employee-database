@@ -9,6 +9,23 @@
         editing: null
       }
     },
+    methods: {
+      editMode(id) {
+        this.cachedEmployee = Object.assign({}, employee)
+        this.editing = id
+      },
+
+      cancelEdit(employee) {
+        Object.assign(employee, this.cachedEmployee)
+        this.editing = null
+      },
+
+      editEmployee(employee) {
+        if (employee.name == '' || employee.email == '') return
+        this.$emit('edit:employee', employee.id, employee)
+        this.editing = null
+      },
+    }
   }
 </script>
 
