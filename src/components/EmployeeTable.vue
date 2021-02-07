@@ -4,6 +4,11 @@
     props: {
         employees: Array,
     },
+    data() {
+      return {
+        editing: null
+      }
+    },
   }
 </script>
 
