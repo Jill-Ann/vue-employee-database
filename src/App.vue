@@ -61,7 +61,11 @@ export default {
     <h1>Employees</h1>
 
     <employee-form @add:employee="addEmployee" />
-    <employee-table v-bind:employees="employees" />
+    <employee-table
+      v-bind:employees="employees"
+      @delete:employee="deleteEmployee"
+      @edit:employee="editEmployee"
+    />
   </div>
 </template>
 
