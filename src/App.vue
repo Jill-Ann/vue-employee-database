@@ -13,6 +13,11 @@ export default {
       employees: []
     }
   },
+
+  mounted() {
+    this.getEmployees()
+  },
+
   methods: {
     addEmployee(employee) {
       const lastId =
