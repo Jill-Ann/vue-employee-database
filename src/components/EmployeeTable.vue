@@ -11,7 +11,7 @@
     },
     methods: {
       editMode(id) {
-        this.cachedEmployee = Object.assign({}, employee)
+        this.cachedEmployee = Object.assign({}, id)
         this.editing = id
       },
 
