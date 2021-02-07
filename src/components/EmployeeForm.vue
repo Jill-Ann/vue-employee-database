@@ -22,7 +22,7 @@
     },
     methods: {
         handleSubmit() {
-            this.sumbitting = true
+            this.submitting = true
             this.clearStatus()
 
             if (this.invalidName || this.invalidEmail) {
