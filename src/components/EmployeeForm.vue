@@ -22,7 +22,7 @@
     },
     methods: {
         handleSubmit() {
-            this.sumbitting = true
+            this.submitting = true
             this.clearStatus()
 
             if (this.invalidName || this.invalidEmail) {
@@ -31,11 +31,13 @@
             }
 
             this.$emit('add:employee', this.employee)
+            this.$refs.first.focus()
 
             this.employee = {
-                name: '',
+              name: '',
                 email: '',
             }
+
             this.error = false
             this.success = true
             this.submitting = false
@@ -54,6 +56,7 @@
     <form @submit.prevent="handleSubmit">
       <label>Employee name</label>
       <input
+        ref="first"
         type="text"
         :class="{ 'has-error': submitting && invalidName }"
         v-model="employee.name"
@@ -67,9 +70,7 @@
         v-model="employee.email"
         @focus="clearStatus"
       />
-      <p v-if="error && submitting" class="error-message">
-        ❗Please fill out all required fields
-      </p>
+      <p v-if="submitting && error" class="error-message">❗Please fill out all required fields</p>
       <p v-if="success" class="success-message">✅ Employee successfully added</p>
       <button>Add Employee</button>
     </form>
